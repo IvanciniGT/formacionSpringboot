@@ -1,0 +1,40 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <groupId>com.curso.app</groupId>
+  <artifactId>users-service</artifactId>
+  <version>1.0.0</version>
+
+
+  <name>Miapp: Servicio de gestión de usuarios</name>
+
+  <properties>
+	<java.version>11</java.version>
+	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+	  
+	<dependency>
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-starter-data-jpa</artifactId>
+	    <version>2.7.10</version>
+	</dependency>
+
+	<dependency>
+	    <groupId>org.projectlombok</groupId>
+	    <artifactId>lombok</artifactId>
+	    <version>1.18.26</version>
+	    <scope>provided</scope>
+	</dependency>
+
+	<dependency>
+		  <groupId>com.curso.app</groupId>
+		  <artifactId>users-model</artifactId>
+		  <version>1.0.0</version>
+	</dependency>
+	
+  </dependencies>
+
+</project>
+
