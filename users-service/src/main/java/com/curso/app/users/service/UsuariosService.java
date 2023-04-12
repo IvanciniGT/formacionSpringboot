@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import org.springframework.stereotype.Service;
+
 import com.curso.app.users.models.Usuario;
 import com.curso.app.users.repository.UsuariosRepository;
 import com.curso.app.users.service.mappers.UsuariosMappers;
@@ -11,6 +13,7 @@ import com.curso.app.users.service.pojo.DatosUsuario;
 import com.curso.app.users.service.pojo.DatosUsuarioModificables;
 import com.curso.app.users.service.pojo.UsuarioPersistido;
 
+@Service // Es la que mermite que Spring inyecte una instancia de esta clase cuando se solicite
 public class UsuariosService {
 
 	private final UsuariosRepository usuariosRepository;

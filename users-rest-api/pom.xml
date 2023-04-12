@@ -2,11 +2,11 @@
   <modelVersion>4.0.0</modelVersion>
   
   <groupId>com.curso.app</groupId>
-  <artifactId>users-model</artifactId>
+  <artifactId>users-rest-api</artifactId>
   <version>1.0.0</version>
 
 
-  <name>Miapp: Modelo de usuarios</name>
+  <name>Miapp: API Rest para el servicio de usuarios</name>
 
   <properties>
 	<java.version>11</java.version>
@@ -15,6 +15,12 @@
 
   <dependencies>
 	  
+	<dependency>
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-starter-web</artifactId>
+	    <version>2.7.10</version>
+	</dependency>
+	
 	<dependency>
 	    <groupId>org.springframework.boot</groupId>
 	    <artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -28,6 +34,12 @@
 	    <scope>provided</scope>
 	</dependency>
 	
+	<dependency>
+		  <groupId>com.curso.app</groupId>
+		  <artifactId>users-service</artifactId>
+		  <version>1.0.0</version>
+	</dependency>
+
   </dependencies>
 
 </project>
