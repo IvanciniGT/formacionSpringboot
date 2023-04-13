@@ -731,3 +731,142 @@ Quiero que lo configuremos entero a mano, para que entendamos lo que estamos hac
 En la empresa lo habitual es que os den una serie de arquetipos, con pre-configuraciones que se hayan decidido corporativamente.
 
 Nosotros vamos a tomar un arquetipo que lo único que generará es un HELLO WORLD ! punto. Sin dependencias a priori.
+
+---
+
+public class Usuario {
+    private long id;
+    public String nombre;
+
+    public void setId(long newId){
+        if(newId<0) throw new RunTimeException("Valor inválido");
+        this.id=newId;
+    }
+    public long getId(){
+        return this.id;
+    }
+    
+}
+
+...
+
+Usuario u1=new Usuario();
+u1.nombre = "Ivan";
+u1.id = 44;
+
+---
+
+
+public class Usuario {
+
+    private long id;
+    private String nombre;
+
+    public void setId(long newId){
+        // ???
+        this.id=newId;
+    }
+    public void setNombre(String nombre){
+        // ???
+        this.nombre=nombre;
+    }
+
+    public long getId(){
+        return this.id;
+    }
+    public String getNombre()){
+        return this.nombre;
+    }
+
+}
+
+
+Usuario u1=new Usuario();
+u1.setNombre("Ivan");
+u1.setId(44);
+
+----
+
+Stream: Objeto que se incluyó en JAVA 1.8
+Es una lista de Objetos sobre los que puedo aplicar programación funcional.
+
+Stream  ---> MAPEO (FUNCION DE MAPEO) ---> Stream
+1                                            2
+2                                            4
+3                                            6
+4                                            8
+5                                           10
+
+
+FUNCION DE MAPEO
+public int doblar(int numero){
+    return numero*2;
+}
+
+Cualquier coleccion (List, Map, Set) desde java 8 la podemos convertir en un stream, al aplicarle el metodo .stream()
+
+En java 1.8 tambiñén podemos convertir un Stream de nuevo en: Una List, Map, Set.... al aplicarle el metodo .collect( FUNCION QUE TRANFORMA EL STREAM EN LO QUE QUERAMOS, pej. una lista )
+
+---
+listas de tareas
+
+Lista de tareas: 
+Como su nombre indica, una lista de tareas va a contener: tareas
+
+Además, que tendrá la lista de tareas?
+- Título
+- Listado de Usuarios Responsables de la Lista de tareas
+
+Tarea?
+
+Descripción     -   String
+Título          -   String
+Estado          -   NO COMENZANDA, COMENZADA, ACABADA - Enumeration
+
+ESQUEMA DE BBDD?
+        n  AsignacionesDeListasDeTareas m                1-n
+Usuario ---< UsuariosxListasDeTareas >--- ListaDeTareas -----< Tarea
+1 Felipe       1 1                        1 Compra              1 1 Patatas
+2 Menchu       1 2                                              1 2 Pimientos
+               2 2                        2 Cosas que hacer     2 3 Camas
+                                                                2 4 Cocina
+                                                                2 5 Plancha
+
+Algo a priori que nos rompa un poco ?? 
+Tenemos ya un módulo de usuarios?.... con su tabla? 
+Y querré cambiar ese módulo? NO...
+    Quién está usando ahora mismo ese módulo? En que proyectos? Para qué servicios? NPI 
+    Querré extender ese módulo
+
+usuario.getListasDeTareasAsociadas() ?
+
+
+LO EXPONGO A TRAVES DE REST o SOAP o LO DEJO EN JAVA o XML/RPC  controladorREST
+ vvv
+SERVICIO            service
+ vvv
+DATOS               model
+
+
+---
+
+# Servicios para nuevo proyecto de tareas:
+
+## Servicio de Tareas
+                                                                                            POJOs de salida
+- nuevaListaDeTareas( Datos básicos de la lista (titulo) + usuario(id?) )                   -> Lista (titulo, id, usuarios, tareas)
+- modificarLista( id, Datos a modificar (titulo) )                                          -> Lista
+- borrarLista( id )                                                                         -> Lista
+- recuperarLista( id )                                                                      -> Lista
+- recuperarListas( id usuario )                                                                -> Array Listas
+- recuperarListas( )                                                                        -> Array Listas
+- asignarListaAUsuario( id_lista, id_usuario )                                              -> Lista
+- desasignarListaAUsuario( id_lista, id_usuario )                                           -> Lista
+- nuevaTarea( Datos básicos de la tarea(titulo, descripcion, estado) + id_lista )           -> Tarea
+- borrarTarea(id )                                                                          -> Tarea
+- modificarTarea(id, datosNuevos(titulo, descripcion, estado))                              -> Tarea(id, titulo, descripcion, estado, listado al que pertenece)
+
+POJOs de entrada?
+- Datos lista (titulo)
+- Datos tarea (titulo, descripcion, estado)
+
