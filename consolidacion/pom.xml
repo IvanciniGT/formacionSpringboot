@@ -1,0 +1,19 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <groupId>com.curso.app</groupId>
+  <artifactId>consolidacion</artifactId>
+  <version>1.0.0</version>
+
+  <name>Consolidación de todos los proyectos</name>
+
+  <packaging>pom</packaging>
+
+  <modules>
+	  <module>users-model</module>
+	  <module>users-service</module>
+	  <module>users-rest-api</module>
+	  <module>app</module>
+  </modules>
+  
+</project>
