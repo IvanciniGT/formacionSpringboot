@@ -15,6 +15,8 @@ public interface UsuariosMappers {
 		usuarioPersistido.setEmail(usuario.getEmail());
 		usuarioPersistido.setTelefono(usuario.getTelefono());
 		usuarioPersistido.setEdad(usuario.getEdad());
+		usuarioPersistido.setFoto(usuario.getFoto());
+		usuarioPersistido.setAceptoPoliticas(usuario.isAceptoPoliticas());
 		return usuarioPersistido;
 	}
 
@@ -25,6 +27,8 @@ public interface UsuariosMappers {
 		usuario.setEmail(datosUsuario.getEmail());
 		usuario.setTelefono(datosUsuario.getTelefono());
 		usuario.setEdad(datosUsuario.getEdad());
+		usuario.setFoto(datosUsuario.getFoto());
+		usuario.setAceptoPoliticas(datosUsuario.isAceptoPoliticas());
 		return usuario;
 	}
 
@@ -33,6 +37,8 @@ public interface UsuariosMappers {
 		usuario.setApellidos(datosUsuarioModificables.getApellidos());
 		usuario.setTelefono(datosUsuarioModificables.getTelefono());
 		usuario.setEdad(datosUsuarioModificables.getEdad());
+		usuario.setFoto(datosUsuarioModificables.getFoto());
+		usuario.setAceptoPoliticas(datosUsuarioModificables.isAceptoPoliticas());
 		return usuario;
 	}
 }

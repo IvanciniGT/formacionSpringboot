@@ -47,6 +47,8 @@ public class UsuariosService {
 	
 	public Optional<UsuarioPersistido> nuevoUsuario(DatosUsuario datosUsuario){
 		Usuario usuario = usuariosRepository.save(UsuariosMappers.datosUsuario2Usuario(datosUsuario));
+		// Nuevo email que mandamos
+		// Comprobación de politicas!
 		return Optional.of(UsuariosMappers.usuario2UsuarioPersistido(usuario));
 	}
 	
@@ -74,3 +76,4 @@ public class UsuariosService {
 	}
 	
 }
+

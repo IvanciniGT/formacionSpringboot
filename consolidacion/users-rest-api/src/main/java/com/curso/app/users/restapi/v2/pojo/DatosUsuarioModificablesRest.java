@@ -1,9 +1,9 @@
-package com.curso.app.users.service.pojo;
+package com.curso.app.users.restapi.v2.pojo;
 
 import lombok.Getter;
 import lombok.Setter;
 
-public class DatosUsuarioModificables {
+public class DatosUsuarioModificablesRest {
 
 	@Getter @Setter
 	private String nombre;

@@ -42,5 +42,13 @@ public class Usuario {
 	@Getter @Setter
 	@Column(updatable = true, nullable = true)
 	private int edad;
+	
+	@Getter @Setter
+	@Column(updatable = true, nullable = true, length = 300)
+	private String foto;
+
+	@Getter @Setter
+	@Column(updatable = true, nullable = false)
+	private boolean aceptoPoliticas = false;
 		
 }
