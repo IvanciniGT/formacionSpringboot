@@ -1,46 +1,102 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  
-  <groupId>com.curso.app</groupId>
-  <artifactId>users-rest-api</artifactId>
-  <version>1.0.0</version>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
 
-  <name>Miapp: API Rest para el servicio de usuarios</name>
+	<parent>
+		<groupId>com.curso.app</groupId>
+		<artifactId>consolidacion</artifactId>
+		<version>1.0.0</version>
+	</parent>
 
-  <properties>
-	<java.version>11</java.version>
-	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
+	<artifactId>users-rest-api</artifactId>
 
-  <dependencies>
-	  
-	<dependency>
-	    <groupId>org.springframework.boot</groupId>
-	    <artifactId>spring-boot-starter-web</artifactId>
-	    <version>2.7.10</version>
-	</dependency>
-	
-	<dependency>
-	    <groupId>org.springframework.boot</groupId>
-	    <artifactId>spring-boot-starter-data-jpa</artifactId>
-	    <version>2.7.10</version>
-	</dependency>
 
-	<dependency>
-	    <groupId>org.projectlombok</groupId>
-	    <artifactId>lombok</artifactId>
-	    <version>1.18.26</version>
-	    <scope>provided</scope>
-	</dependency>
-	
-	<dependency>
-		  <groupId>com.curso.app</groupId>
-		  <artifactId>users-service</artifactId>
-		  <version>1.0.0</version>
-	</dependency>
+	<name>Miapp: API Rest para el servicio de usuarios</name>
 
-  </dependencies>
+	<properties>
+		<java.version>11</java.version>
+		<maven.compiler.source>11</maven.compiler.source>
+		<maven.compiler.target>11</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<version>2.7.10</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+			<version>2.7.10</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.26</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.curso.app</groupId>
+			<artifactId>users-service</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
+		<!--Spring tiene un modulo para poder hacer pruebas automatizadas-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<version>2.7.10</version>
+			<scope>test</scope>
+		</dependency>
+		<!--JUNIT: Framework de pruebas automatizadas en JAVA-->
+		<dependency>
+			<groupId>org.junit.platform</groupId>
+			<artifactId>junit-platform-suite</artifactId>
+			<version>1.9.2</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>5.8.2</version>
+			<scope>test</scope>
+		</dependency>
+		<!--CUCUMBER: Libreria que procesa esos ficheros .feature-->
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-java</artifactId>
+			<version>7.9.0</version>
+			<scope>test</scope>
+		</dependency>
+		<!--Cucumber, tiene su propia libreria para integrarse con Spring-->
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-spring</artifactId>
+			<version>7.9.0</version>
+			<scope>test</scope>
+		</dependency>
+		<!--Cucumber, tiene su propia libreria para integrarse con junit-->
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-junit-platform-engine</artifactId>
+			<version>7.9.0</version>
+			<scope>test</scope>
+		</dependency>
+		<!--Necesitamos una BBDD-->
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>2.1.214</version>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
 
 </project>
-

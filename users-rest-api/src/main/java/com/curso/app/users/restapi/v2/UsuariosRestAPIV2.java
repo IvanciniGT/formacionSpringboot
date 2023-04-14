@@ -1,5 +1,5 @@
 
-package com.curso.app.users.restapi.v1;
+package com.curso.app.users.restapi.v2;
 
 import java.util.List;
 import java.util.Optional;
@@ -16,22 +16,22 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.curso.app.users.restapi.v1.pojo.DatosUsuarioRest;
-import com.curso.app.users.restapi.v1.mappers.UsuariosMappers;
-import com.curso.app.users.restapi.v1.pojo.DatosUsuarioModificablesRest;
-import com.curso.app.users.restapi.v1.pojo.UsuarioPersistidoRest;
+import com.curso.app.users.restapi.v2.pojo.DatosUsuarioRest;
+import com.curso.app.users.restapi.v2.mappers.UsuariosMappers;
+import com.curso.app.users.restapi.v2.pojo.DatosUsuarioModificablesRest;
+import com.curso.app.users.restapi.v2.pojo.UsuarioPersistidoRest;
 import com.curso.app.users.service.UsuariosService;
 import com.curso.app.users.service.pojo.DatosUsuario;
 import com.curso.app.users.service.pojo.DatosUsuarioModificables;
 import com.curso.app.users.service.pojo.UsuarioPersistido;
 
 @RestController
-@RequestMapping("/api/v1")
-public class UsuariosRestAPI {
+@RequestMapping("/api/v2")
+public class UsuariosRestAPIV2 {
 	
 	private final UsuariosService usuariosService;
 	
-	public UsuariosRestAPI(UsuariosService usuariosService) { // Inyección de dependencias
+	public UsuariosRestAPIV2(UsuariosService usuariosService) { // Inyección de dependencias
 		this.usuariosService=usuariosService;
 	}
 	
